@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0a09">
+<title>NOIR — Digital Atelier</title>
+
+<style>
+/* =================================
+   01. DESIGN SYSTEM
+================================= */
+:root {
+  --bg: #0b0a09;
+  --panel: #131210;
+  --gold: #c7a66a;
+  --gold-light: #f0dfb2;
+  --white: #f4f0e8;
+  --muted: #99948a;
+  --line: rgba(221,194,142,.19);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--sans);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+body.menu-open { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; }
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.container {
+  width: min(1160px, 88%);
+  margin-inline: auto;
+}
+
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font: 400 clamp(36px, 6vw, 66px)/1.1 var(--serif);
+  letter-spacing: -1.5px;
+  margin: 16px 0 22px;
+}
+
+.description {
+  color: var(--muted);
+  max-width: 490px;
+  font-size: 14px;
+}
+
+.gold { color: var(--gold); }
+
+/* =================================
+   02. CUSTOM POINTER GLOW
+================================= */
+.pointer-glow {
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 340px;
+  height: 340px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, rgba(194,151,75,.075), transparent 70%
+  );
+  transform: translate3d(-50%,-50%,0);
+  opacity: 0;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pointer-glow { opacity: 1; }
+}
+
+main, header, footer { position: relative; }
+
+/* =================================
+   03. NAVIGATION
+================================= */
+header {
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11,10,9,.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font: 23px var(--serif);
+  letter-spacing: 4px;
+}
+
+.brand span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #c0b9ad;
+  position: relative;
+}
+
+.nav-links a:not(.nav-contact)::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links .nav-contact { color: var(--gold); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--white);
+  width: 43px;
+  height: 43px;
+  cursor: pointer;
+}
+
+/* =================================
+   04. HERO
+================================= */
+.hero {
+  min-height: 690px;
+  min-height: min(800px, 90svh);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 0 90px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.hero-copy { position: relative; z-index: 2; }
+
+.hero h1 {
+  font: 400 clamp(54px, 7.3vw, 94px)/.99 var(--serif);
+  letter-spacing: -4px;
+  margin: 27px 0;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero-text {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 430px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 13px 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  transition:
+    background .3s,
+    color .3s,
+    border-color .3s,
+    transform .3s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #100e0a;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero-footnote {
+  margin-top: 34px;
+  color: #706a60;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =================================
+   05. CSS METALLIC ORB
+   Simulated 3D with gradients
+================================= */
+.orb-stage {
+  position: relative;
+  min-height: 410px;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+  isolation: isolate;
+}
+
+.orb-halo {
+  position: absolute;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, rgba(187,143,67,.13), transparent 68%
+  );
+  filter: blur(20px);
+}
+
+.orb {
+  width: min(350px, 78%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 31% 20%,
+      #fff0c7 0%, #c6a66b 7%, transparent 25%),
+    radial-gradient(ellipse at 70% 77%,
+      #070706 0%, #242019 23%, transparent 48%),
+    conic-gradient(
+      from 35deg,
+      #20190d, #ddc28b, #53401f, #090908,
+      #ad8c4f, #e5d2a1, #16130d, #b89a60, #20190d
+    );
+  box-shadow:
+    inset -20px -25px 40px #000b,
+    inset 12px 8px 24px #fff2,
+    0 0 80px #bd97451a;
+  transform-style: preserve-3d;
+  animation: orb-float 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb::before {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  border: 1px solid #f4dfaa55;
+  transform: translateZ(20px);
+}
+
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    120deg, transparent 25%, #fff3 38%,
+    transparent 50%, #0005 78%, transparent
+  );
+  mix-blend-mode: screen;
+}
+
+.orbit {
+  position: absolute;
+  width: 115%;
+  height: 38%;
+  border: 1px solid #c6a66b65;
+  border-radius: 50%;
+  transform: rotate(-27deg);
+}
+
+.orbit.two {
+  width: 110%;
+  height: 55%;
+  transform: rotate(55deg);
+  border-color: #c6a66b32;
+}
+
+.orb-caption {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  font-size: 9px;
+  color: #817967;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes orb-float {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* =================================
+   06. MARQUEE
+================================= */
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding: 20px 0;
+  background: #100f0d;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track span {
+  padding: 0 28px;
+  color: #a49a83;
+  font: 16px var(--serif);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.marquee-track b {
+  color: var(--gold);
+  font-weight: 400;
+  padding-left: 50px;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* =================================
+   07. PORTFOLIO
+================================= */
+.work-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.project {
+  border: 1px solid var(--line);
+  background: #11100e;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: border-color .4s;
+}
+
+.project:hover { border-color: #a88b52; }
+
+.project-visual {
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 60%,
+      #55472c, transparent 52%),
+    #17140f;
+}
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #ffffff08;
+  pointer-events: none;
+}
+
+.visual-two {
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      #5b4930, transparent 50%),
+    #12110f;
+}
+.visual-three {
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      #303b48, transparent 55%),
+    #101113;
+}
+.visual-four {
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      #4c372b, transparent 55%),
+    #14100e;
+}
+
+.project-art {
+  width: 68%;
+  aspect-ratio: 1.2;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.project:hover .project-art { transform: scale(1.06); }
+
+.art-circle {
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 23%,
+      #fff1c6, #b59a62 12%, #4b3a20 35%, #080807 70%);
+  box-shadow: 0 15px 60px #0009, 0 0 40px #c8a15a1c;
+}
+
+.art-type {
+  font: clamp(20px, 3vw, 38px) var(--serif);
+  color: #e7d6b2;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.art-type small {
+  display: block;
+  font: 8px var(--sans);
+  letter-spacing: 3px;
+  margin-top: 10px;
+  color: #b9ab8c;
+}
+
+.art-ring {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  border: 1px solid #c6a66b80;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+}
+
+.art-ring.r2 {
+  transform: rotate(35deg);
+  width: 75%;
+  height: 65%;
+}
+
+.project-info {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.project-info h3 {
+  font: 23px var(--serif);
+  font-weight: 400;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.project-arrow {
+  font-size: 22px;
+  color: var(--gold);
+}
+
+/* =================================
+   08. MANIFESTO
+================================= */
+.manifesto {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 45%,
+      #30271922, transparent 65%);
+  overflow: hidden;
+}
+
+.manifesto-inner { max-width: 880px; margin: auto; }
+
+.manifesto h2 {
+  font: 400 clamp(38px, 7vw, 78px)/1.16 var(--serif);
+  letter-spacing: -2px;
+  margin: 25px 0;
+}
+
+.manifesto h2 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.manifesto .description { margin-inline: auto; }
+
+/* =================================
+   09. SERVICES
+================================= */
+.services { border-top: 1px solid var(--line); }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.service {
+  min-height: 205px;
+  padding: 27px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background .3s;
+}
+
+.service:hover { background: #17140f; }
+
+.service-number {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.service h3 {
+  font: 23px var(--serif);
+  margin: 23px 0 10px;
+  font-weight: 400;
+}
+
+.service p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =================================
+   10. CONTACT
+================================= */
+.contact { text-align: center; }
+
+.contact-panel {
+  padding: 75px 25px;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 110%,
+      #9d77341c, transparent 60%),
+    #100f0d;
+}
+
+.contact-panel h2 {
+  font: 400 clamp(42px, 7vw, 78px)/1.08 var(--serif);
+  margin: 18px 0;
+}
+
+.contact-panel .description {
+  margin: 0 auto 28px;
+}
+
+/* =================================
+   11. FOOTER
+================================= */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-inner p,
+.footer-inner a {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* =================================
+   12. REVEAL ANIMATIONS
+================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project.reveal { transition-delay: .08s; }
+
+/* =================================
+   13. RESPONSIVE
+================================= */
+@media (min-width: 761px) {
+  .menu-toggle { display: none; }
+}
+
+@media (max-width: 760px) {
+  section { padding: 78px 0; }
+  .container { width: 88%; }
+
+  .nav { min-height: 68px; }
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    position: fixed;
+    z-index: 25;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: #0b0a09;
+    visibility: hidden;
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transition:
+      clip-path .45s ease,
+      opacity .35s ease,
+      visibility .45s;
+  }
+
+  .nav-links.open {
+    visibility: visible;
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+
+  .nav-links a { font: 25px var(--serif); }
+  .nav-links .nav-contact { font-size: 20px; }
+
+  .menu-toggle {
+    z-index: 30;
+    position: relative;
+    width: 43px;
+    height: 43px;
+    color: var(--gold);
+    background: transparent;
+    border: 1px solid var(--line);
+    cursor: pointer;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 80px 0 55px;
+  }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .hero h1 {
+    font-size: clamp(54px, 13vw, 82px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero-text { font-size: 13px; }
+  .orb-stage { min-height: 330px; }
+  .orb { width: min(270px, 70%); }
+  .orb-caption { right: 0; bottom: 0; }
+
+  .work-intro {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .work-grid { grid-template-columns: 1fr; gap: 17px; }
+  .project-info h3 { font-size: 21px; }
+
+  .service-grid { grid-template-columns: 1fr; }
+  .service { min-height: auto; padding: 24px; }
+
+  .contact-panel { padding: 55px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 48px; }
+  .hero-actions .btn { width: 100%; }
+  .orb-stage { min-height: 270px; }
+  .project-info { padding: 16px; }
+}
+
+/* Respect device motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+  .pointer-glow { display: none; }
+}
+</style>
+</head>
+
+<body>
+<div class="pointer-glow" id="pointerGlow"></div>
+
+<header>
+  <nav class="nav container">
+    <a class="brand" href="#home">NOIR<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation" aria-expanded="false">
+      <span id="menuIcon">☰</span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#work">Selected Work</a>
+      <a href="#about">Philosophy</a>
+      <a href="#services">Expertise</a>
+      <a class="nav-contact" href="#contact">Start a Project ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Independent Digital Atelier</div>
+
+      <h1>
+        Beyond<br>
+        the <em>ordinary.</em>
+      </h1>
+
+      <p class="hero-text">
+        We create distinctive digital experiences
+        where timeless aesthetics meet modern interaction.
+        Designed with intention. Built to leave an impression.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#work">Explore the Work ↗</a>
+        <a class="btn btn-outline" href="#about">Our Philosophy</a>
+      </div>
+
+      <p class="hero-footnote">
+        Independent · Digital · Creative
+      </p>
+    </div>
+
+    <div class="orb-stage reveal" id="orbStage">
+      <div class="orb-halo"></div>
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+      <div class="orb" id="orb"></div>
+      <p class="orb-caption">Form / Light / Motion — 001</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Design, Digital, Experience">
+  <div class="marquee-track" aria-hidden="true">
+    <span>DESIGN <b>✳</b></span>
+    <span>DIGITAL <b>✳</b></span>
+    <span>EXPERIENCE <b>✳</b></span>
+    <span>PRECISION <b>✳</b></span>
+    <span>DESIGN <b>✳</b></span>
+    <span>DIGITAL <b>✳</b></span>
+    <span>EXPERIENCE <b>✳</b></span>
+    <span>PRECISION <b>✳</b></span>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="container">
+    <div class="work-intro reveal">
+      <div>
+        <div class="eyebrow">Selected Experiments / 2026</div>
+        <h2 class="section-title">Less, but <span class="gold">better.</span></h2>
+        <p class="description">
+          Digital concepts built around atmosphere,
+          composition and a more thoughtful user experience.
+        </p>
+      </div>
+      <a href="#contact" class="btn btn-outline">Discuss a Project ↗</a>
+    </div>
+
+    <div class="work-grid">
+      <article class="project reveal">
+        <div class="project-visual">
+          <div class="project-art">
+            <div class="art-ring"></div>
+            <div class="art-ring r2"></div>
+            <div class="art-circle"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Obsidian</h3>
+            <p>Luxury / Brand Experience</p>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-visual visual-two">
+          <div class="project-art">
+            <div class="art-type">ATELIER<small>OBJECTS OF BEAUTY</small></div>
+            <div class="art-ring"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Atelier</h3>
+            <p>Editorial / E-commerce Concept</p>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-visual visual-three">
+          <div class="project-art">
+            <div class="art-type">N° 03<small>FORM IN MOTION</small></div>
+            <div class="art-ring r2"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Form No. 03</h3>
+            <p>Interactive / Digital Art</p>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-visual visual-four">
+          <div class="project-art">
+            <div class="art-circle"></div>
+            <div class="art-ring"></div>
+            <div class="art-ring r2"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div>
+            <h3>Maison</h3>
+            <p>Hospitality / Digital Identity</p>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="about">
+  <div class="container manifesto-inner reveal">
+    <div class="eyebrow">The Philosophy</div>
+    <h2>
+      Good design attracts.<br>
+      <span>Exceptional experiences</span><br>
+      stay with you.
+    </h2>
+    <p class="description">
+      We believe the smallest details create the strongest
+      impressions. Every movement, every space and every
+      interaction should have a reason to exist.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Areas of Expertise</div>
+      <h2 class="section-title">Crafted with <span class="gold">intent.</span></h2>
+      <p class="description">
+        Thoughtful design solutions for brands that
+        value clarity, quality and a distinctive presence.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service reveal">
+        <span class="service-number">01 / DESIGN</span>
+        <h3>Digital Identity</h3>
+        <p>Elegant visual systems and consistent digital brand experiences.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">02 / DEVELOPMENT</span>
+        <h3>Web Experiences</h3>
+        <p>Responsive websites with refined layouts and meaningful interaction.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">03 / MOTION</span>
+        <h3>Interactive Design</h3>
+        <p>Carefully timed transitions, movement and tactile interface details.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-panel reveal">
+      <div class="eyebrow">The Next Chapter</div>
+      <h2>Let's create<br><span class="gold">something timeless.</span></h2>
+      <p class="description">
+        Have a vision worth bringing to life?
+        Let's start a conversation.
+      </p>
+      <a class="btn btn-gold" id="contactBtn"
+        href="https://wa.me/60123456789"
+        target="_blank" rel="noopener noreferrer">
+        Begin a Conversation ↗
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="brand" href="#home">NOIR<span>.</span></a>
+    <p>Independent Digital Atelier · Malaysia</p>
+    <p>© <span id="year"></span> NOIR Studio</p>
+  </div>
+</footer>
+
+<script>
+/* =================================
+   01. MOBILE MENU
+================================= */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const menuIcon = document.getElementById("menuIcon");
+
+function setMenu(open) {
+  navLinks.classList.toggle("open", open);
+  document.body.classList.toggle("menu-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute(
+    "aria-label", open ? "Close navigation" : "Open navigation"
+  );
+  menuIcon.textContent = open ? "×" : "☰";
+}
+
+menuToggle.addEventListener("click", () => {
+  setMenu(!navLinks.classList.contains("open"));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") setMenu(false);
+});
+
+/* =================================
+   02. SCROLL REVEAL
+================================= */
+const revealItems = document.querySelectorAll(".reveal");
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if ("IntersectionObserver" in window && !reduceMotion) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("visible"));
+}
+
+/* =================================
+   03. POINTER GLOW + ORB PARALLAX
+   Desktop pointer devices only
+================================= */
+const finePointer = window.matchMedia(
+  "(hover: hover) and (pointer: fine)"
+).matches;
+
+const glow = document.getElementById("pointerGlow");
+const orb = document.getElementById("orb");
+const orbStage = document.getElementById("orbStage");
+
+let pointerX = -500;
+let pointerY = -500;
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+let frameRequested = false;
+
+function renderPointer() {
+  currentX += (targetX - currentX) * 0.12;
+  currentY += (targetY - currentY) * 0.12;
+
+  glow.style.transform =
+    `translate3d(${currentX}px,${currentY}px,0) translate(-50%,-50%)`;
+
+  const rect = orbStage.getBoundingClientRect();
+  const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+
+  if (visible) {
+    const dx = (pointerX - (rect.left + rect.width / 2)) / rect.width;
+    const dy = (pointerY - (rect.top + rect.height / 2)) / rect.height;
+
+    orb.style.animationPlayState = "paused";
+    orb.style.transform =
+      `translateY(${dy * -12}px) rotateX(${dy * -12}deg) rotateY(${dx * 15}deg)`;
+  }
+
+  frameRequested = false;
+}
+
+if (finePointer && !reduceMotion) {
+  document.addEventListener("pointermove", event => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    targetX = event.clientX;
+    targetY = event.clientY;
+
+    if (!frameRequested) {
+      frameRequested = true;
+      requestAnimationFrame(renderPointer);
+    }
+  }, { passive: true });
+
+  document.addEventListener("pointerleave", () => {
+    orb.style.animationPlayState = "running";
+  });
+}
+
+/* =================================
+   04. PROJECT CARD 3D TILT
+================================= */
+const projects = document.querySelectorAll(".project");
+
+if (finePointer && !reduceMotion) {
+  projects.forEach(project => {
+    project.addEventListener("pointermove", event => {
+      const rect = project.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+
+      project.style.transform =
+        `perspective(900px) rotateX(${(0.5-y)*5}deg) rotateY(${(x-0.5)*5}deg)`;
+    });
+
+    project.addEventListener("pointerleave", () => {
+      project.style.transform = "";
+    });
+  });
+}
+
+/* =================================
+   05. COPYRIGHT YEAR
+================================= */
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+</body>
+</html>
