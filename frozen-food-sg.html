@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#eff4f3"><title>FROST & FRESH · 新加坡冷冻食品</title>
+<style>
+/* ===== 品牌颜色：可在这里调整整站色调 ===== */
+:root{--navy:#173842;--teal:#2c7171;--mint:#dcebe5;--lime:#d9f16c;--cream:#f3f5ef;--white:#fff;--ink:#1d2c30;--muted:#718084;--line:#dce4e0;--orange:#ed8c57;--shadow:0 16px 45px #17384214;--serif:Georgia,"Noto Serif SC",serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;line-height:1.6}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.notice{background:var(--navy);color:#eaf2ef;text-align:center;padding:7px;font-size:9px;letter-spacing:.1em}.nav{height:73px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:900;font-size:19px;letter-spacing:.06em;color:var(--navy)}.brand span{color:var(--teal)}.brand small{display:block;font-size:8px;letter-spacing:.24em;color:var(--muted);font-weight:600}.links{display:flex;gap:24px;font-size:11px;color:#526367}.links a:hover{color:var(--teal)}.nav-right{display:flex;align-items:center;gap:9px}.button{border:0;padding:11px 16px;font-size:10px;font-weight:800;transition:.2s}.solid{background:var(--navy);color:white;border-radius:99px}.solid:hover{background:var(--teal);transform:translateY(-2px)}.outline{border:1px solid #bdcbc6;background:transparent;color:var(--navy);border-radius:99px}.outline:hover{background:#fff}.cart-button{position:relative;border:1px solid #cbd6d1;border-radius:50%;width:37px;height:37px;background:#fff;color:var(--navy)}.cart-count{position:absolute;right:-4px;top:-5px;background:var(--orange);color:#fff;min-width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font-size:8px}.hero{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:center;padding:43px 0 48px}.eyebrow{font-size:9px;letter-spacing:.2em;color:var(--teal);font-weight:900}.hero h1{font:500 clamp(42px,5.5vw,70px)/1.08 var(--serif);letter-spacing:-.03em;margin:15px 0}.hero h1 span{color:var(--teal)}.hero p{color:var(--muted);font-size:12px;max-width:420px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.trust{display:flex;gap:19px;margin-top:25px;color:var(--muted);font-size:8px}.trust b{display:block;font:600 14px var(--serif);color:var(--navy)}
+/* 首页冷冻食品插画：后续可以替换成真实商品或厨房照片。 */
+.hero-art{height:385px;position:relative;overflow:hidden;border-radius:4px 70px 4px 4px;background:linear-gradient(145deg,#c8e0d8,#eef2e9 48%,#9dc1b8);box-shadow:var(--shadow)}.hero-art:before{content:"";position:absolute;left:9%;top:9%;width:29%;height:50%;background:linear-gradient(135deg,#f8faf3,#dae9e0);border:8px solid #f9faf5;box-shadow:0 6px 20px #38564b20}.hero-art:after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;background:#9baf9b}.sun{position:absolute;right:17%;top:-15%;width:32%;height:85%;background:#f8f6da77;filter:blur(20px);transform:skew(-20deg)}.bowl{position:absolute;z-index:3;right:20%;bottom:17%;width:180px;height:70px;background:linear-gradient(#f9f7ef 0 27%,#c7d8cf 28%);border-radius:8px 8px 60% 60%;box-shadow:0 20px 25px #24483b28}.bowl:before{content:"";position:absolute;left:17%;top:-22px;width:44px;height:40px;background:#cf8864;border-radius:50%;box-shadow:46px 4px 0 #8da56e,86px 10px 0 #e5bd63}.bowl:after{content:"";position:absolute;left:31%;top:-30px;width:48px;height:41px;background:#dfa078;border-radius:50%;box-shadow:52px 8px 0 #e8ca72}.leaf{position:absolute;z-index:4;left:50%;top:46%;width:9px;height:25px;border-radius:100% 0;background:#557e58;transform:rotate(32deg)}.leaf:after{content:"";position:absolute;left:15px;top:7px;width:8px;height:20px;border-radius:100% 0;background:#75956b;transform:rotate(44deg)}.plate{position:absolute;z-index:2;right:14%;bottom:13%;width:250px;height:85px;background:#f6f5eb;border-radius:50%;box-shadow:0 11px 0 #d7ddd3}.badge-art{position:absolute;z-index:5;right:18px;top:18px;background:#ffffffdd;padding:9px 12px;font-size:8px;letter-spacing:.15em;color:var(--navy)}.art-caption{position:absolute;z-index:5;left:16px;bottom:14px;color:#fff;font-size:8px;letter-spacing:.15em;text-shadow:0 1px 5px #18352b}.marquee{border-block:1px solid var(--line);overflow:hidden;padding:10px;color:#75847e;font-size:8px;letter-spacing:.18em}.track{display:flex;gap:39px;width:max-content;animation:slide 28s linear infinite}.track span:after{content:"✳";margin-left:39px;color:var(--orange)}.section{padding:62px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:19px}.head h2{font:500 31px var(--serif);margin:7px 0 0}.head p{max-width:420px;color:var(--muted);font-size:9px;margin:0}.catalog-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid #cbd5d1;background:transparent;color:#56676a;padding:8px 12px;border-radius:99px;font-size:9px}.filter:hover,.filter.active{background:var(--teal);color:white;border-color:var(--teal)}.search-sort{display:flex;gap:7px}.search{width:180px;border:1px solid #cbd5d1;padding:8px 10px;background:#fff;font-size:9px}.sort{border:1px solid #cbd5d1;background:#fff;color:#56676a;padding:8px;font-size:9px}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:16px}.product{background:#fff;border:1px solid #e0e7e3;transition:.25s;position:relative}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product[hidden]{display:none}.product-art{height:185px;position:relative;overflow:hidden;background:linear-gradient(145deg,#d8e9e1,#edf1e8)}.product-art.orange{background:linear-gradient(145deg,#f4d7bd,#faeee0)}.product-art.blue{background:linear-gradient(145deg,#cddfe6,#e9f0ed)}.product-art.purple{background:linear-gradient(145deg,#ddd8e9,#f0edf3)}.pack{position:absolute;left:50%;top:50%;transform:translate(-50%,-47%) rotate(-4deg);width:116px;height:126px;background:linear-gradient(145deg,#fff,#eef2ee);border:1px solid #fff;box-shadow:0 15px 24px #23473c27;border-radius:5px;transition:.3s}.product:hover .pack{transform:translate(-50%,-50%) rotate(0) scale(1.04)}.pack:before{content:"";position:absolute;left:0;right:0;top:0;height:13px;background:var(--teal)}.product-art.orange .pack:before{background:var(--orange)}.product-art.blue .pack:before{background:#5383a3}.product-art.purple .pack:before{background:#877ca4}.food-icon{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font-size:38px}.pack-name{position:absolute;left:7px;right:7px;bottom:9px;text-align:center;font-size:7px;letter-spacing:.08em;color:var(--navy);font-weight:900}.product-badge{position:absolute;left:10px;top:10px;background:#ffffffdc;color:var(--teal);padding:5px 7px;font-size:7px;letter-spacing:.1em}.favorite{position:absolute;right:9px;top:9px;width:28px;height:28px;border:0;border-radius:50%;background:#ffffffdf;color:var(--navy);font-size:15px}.favorite.saved{color:#e16d61}.product-info{padding:11px 12px 12px}.product-info h3{font:500 14px var(--serif);margin:0}.product-meta{font-size:8px;color:var(--muted);margin-top:3px}.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.price{color:var(--navy);font-size:10px;font-weight:900}.unit{color:var(--muted);font-size:7px;font-weight:400}.add-cart{border:0;background:var(--navy);color:#fff;border-radius:99px;width:29px;height:29px;font-size:17px}.add-cart:hover{background:var(--teal)}
+.meal-finder{background:var(--navy);color:white;padding:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center}.meal-finder h2{font:500 28px var(--serif);line-height:1.3;margin:7px 0}.meal-finder p{font-size:9px;color:#d2dfe0}.meal-finder .eyebrow{color:var(--lime)}.meal-options{display:flex;gap:7px;flex-wrap:wrap}.meal-option{border:1px solid #ffffff66;background:transparent;color:#fff;padding:8px 10px;font-size:8px}.meal-option.selected,.meal-option:hover{background:var(--lime);color:var(--navy);border-color:var(--lime)}.meal-result{display:none;margin-top:11px;background:#fff;color:var(--navy);padding:10px;font-size:9px}.meal-result.show{display:block;animation:fade .25s}.meal-actions{display:flex;justify-content:space-between;align-items:center;margin-top:13px;gap:8px}.delivery-note{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.delivery-card{background:#fff;padding:16px;border:1px solid var(--line)}.delivery-card b{font:500 15px var(--serif);display:block;margin:7px 0 4px}.delivery-card p{font-size:8px;color:var(--muted);margin:0}.footer{background:#173842;color:#f0f3ef;padding:35px 0;margin-top:35px}.foot{display:flex;justify-content:space-between;gap:20px}.foot p{font-size:9px;color:#c0d0cd;max-width:310px}.footlinks{display:flex;gap:15px;font-size:9px;color:#d3dfdc}.copy{border-top:1px solid #ffffff2b;margin-top:20px;padding-top:12px;color:#b5c5c1;font-size:8px}.cart-drawer{position:fixed;z-index:30;inset:0;background:#102b31a8;display:none;justify-content:flex-end}.cart-drawer.open{display:flex;animation:fade .2s}.cart-panel{width:min(420px,100%);height:100%;background:#fff;overflow:auto;padding:21px;animation:slideIn .28s}.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px}.cart-head h2{font:500 22px var(--serif);margin:0}.close{border:1px solid var(--line);width:30px;height:30px;background:#fff}.cart-list{padding:10px 0}.cart-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid #edf0ee;font-size:9px}.qty{display:flex;align-items:center;gap:6px}.qty button{width:23px;height:23px;border:1px solid var(--line);background:white;color:var(--navy)}.remove{border:0;background:none;color:#b16959;font-size:8px}.cart-empty{text-align:center;color:var(--muted);font-size:10px;padding:30px 0}.cart-summary{border-top:1px solid var(--line);padding-top:13px}.total{display:flex;justify-content:space-between;font-size:11px;font-weight:900}.disclaimer{font-size:8px;color:var(--muted);margin:8px 0 13px}.checkout{display:grid;gap:8px}.checkout input,.checkout select{width:100%;border:1px solid #d5ded9;padding:10px;font-size:9px;background:white}.checkout .button{width:100%;justify-content:center}.toast{position:fixed;z-index:50;bottom:20px;left:50%;transform:translate(-50%,10px);opacity:0;pointer-events:none;background:#173842;color:white;padding:10px 15px;font-size:9px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}.floating{position:fixed;right:15px;bottom:15px;z-index:8;border:0;border-radius:99px;background:var(--teal);color:#fff;padding:11px 14px;font-size:9px;box-shadow:0 8px 20px #153d3b33}.reveal{opacity:0;transform:translateY(14px);transition:.55s}.reveal.visible{opacity:1;transform:none}@keyframes slide{to{transform:translateX(-50%)}}@keyframes float{50%{transform:translateY(-5px)}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes slideIn{from{transform:translateX(35px);opacity:.6}to{transform:none;opacity:1}}@media(max-width:850px){.hero{gap:20px}.hero-art{height:330px}.product-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.wrap{width:calc(100% - 28px)}.nav{height:64px}.links{display:none}.hero{grid-template-columns:1fr;padding:30px 0;gap:20px}.hero h1{font-size:46px}.hero-art{height:255px}.section{padding:48px 0}.head{display:block}.head p{margin-top:9px}.head h2{font-size:27px}.catalog-tools{align-items:flex-start;flex-direction:column}.search{width:150px}.product-grid{gap:8px}.product-art{height:143px}.product-info{padding:9px}.product-info h3{font-size:12px}.meal-finder{grid-template-columns:1fr;padding:21px;gap:10px}.delivery-note{grid-template-columns:1fr}.foot{flex-direction:column}.footlinks{flex-wrap:wrap}.floating{right:9px;bottom:9px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style></head><body>
+<div class="notice">新加坡冷冻食品示范店　 ·　 商品、价格与配送信息请替换为实际资料</div><header class="wrap nav"><a href="#home" class="brand">FROST<span>&</span>FRESH<small>FROZEN GOODNESS, MADE SIMPLE</small></a><nav class="links"><a href="#shop">选购商品</a><a href="#meal">今晚吃什么</a><a href="#delivery">配送说明</a></nav><div class="nav-right"><button class="cart-button" id="showFavorites" aria-label="显示收藏商品">♡<span class="cart-count" id="favoriteCount">0</span></button><button class="cart-button" id="openCart" aria-label="打开购物车">🛒<span class="cart-count" id="cartCount">0</span></button><a class="button solid" href="#shop">开始选购 ↗</a></div></header>
+<main id="home"><section class="wrap hero"><div><div class="eyebrow">FROZEN FOOD, FRESH IDEAS</div><h1>冷冻好食材，<br><span>让每一餐更轻松。</span></h1><p>忙碌的日子，也能快速准备喜欢的一餐。浏览冷冻主食、点心、海鲜与蔬菜，选好商品后通过 WhatsApp 询问或下单。</p><div class="actions"><a class="button solid" href="#shop">探索商品 ↓</a><a class="button outline" href="#meal">帮我搭一餐 ✦</a></div><div class="trust"><div><b>SGD</b>新币示例价格</div><div><b>快选</b>按类型筛商品</div><div><b>WhatsApp</b>继续询问</div></div></div><div class="hero-art" aria-label="餐盘食物插画"><div class="sun"></div><div class="plate"></div><div class="bowl"></div><div class="leaf"></div><div class="badge-art">FREEZER TO TABLE</div><div class="art-caption">GOOD FOOD, READY WHEN YOU ARE</div></div></section><div class="marquee"><div class="track"><span>一周备餐灵感</span><span>冷冻点心</span><span>海鲜与肉类</span><span>家常主食</span><span>简单加热上桌</span><span>一周备餐灵感</span><span>冷冻点心</span><span>海鲜与肉类</span><span>家常主食</span><span>简单加热上桌</span></div></div>
+<section class="wrap section" id="shop"><div class="head"><div><div class="eyebrow">THE FREEZER EDIT</div><h2>今天想吃什么？</h2></div><p>商品名称、图片和价格为示范资料；请换成真实商品。筛选、搜索、加入购物车都可在本页互动。</p></div><div class="catalog-tools"><div class="filters"><button class="filter active" data-category="all">全部</button><button class="filter" data-category="meal">主食料理</button><button class="filter" data-category="snack">点心小食</button><button class="filter" data-category="seafood">海鲜肉类</button><button class="filter" data-category="veggie">蔬菜素食</button></div><div class="search-sort"><input class="search" id="search" type="search" placeholder="搜索商品…" aria-label="搜索商品"><select class="sort" id="sort"><option value="featured">精选排序</option><option value="low">价格由低到高</option><option value="high">价格由高到低</option></select></div></div><div class="product-grid" id="productGrid">
+<!-- 新增商品：复制整张 product 卡片，改 data-category、data-price、名称、口味说明和插画标签。 -->
+<article class="product" data-category="meal" data-price="8.9" data-name="香草鸡扒配菜包"><div class="product-art"><span class="product-badge">EASY MEAL</span><button class="favorite" aria-label="收藏香草鸡扒配菜包">♡</button><div class="pack"><span class="food-icon">🍗</span><span class="pack-name">HERB CHICKEN</span></div></div><div class="product-info"><h3>香草鸡扒配菜包</h3><div class="product-meta">简单料理 · 份量示例 1–2 人</div><div class="product-bottom"><span class="price">S$8.90 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入香草鸡扒配菜包">＋</button></div></div></article>
+<article class="product" data-category="snack" data-price="7.2" data-name="脆皮咖喱角"><div class="product-art orange"><span class="product-badge">TEA-TIME</span><button class="favorite" aria-label="收藏脆皮咖喱角">♡</button><div class="pack"><span class="food-icon">🥟</span><span class="pack-name">CURRY PUFFS</span></div></div><div class="product-info"><h3>脆皮咖喱角</h3><div class="product-meta">点心小食 · 烤箱或气炸锅示例</div><div class="product-bottom"><span class="price">S$7.20 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入脆皮咖喱角">＋</button></div></div></article>
+<article class="product" data-category="seafood" data-price="12.8" data-name="冷冻三文鱼切片"><div class="product-art blue"><span class="product-badge">SEAFOOD</span><button class="favorite" aria-label="收藏冷冻三文鱼切片">♡</button><div class="pack"><span class="food-icon">🐟</span><span class="pack-name">SALMON SLICES</span></div></div><div class="product-info"><h3>冷冻三文鱼切片</h3><div class="product-meta">海鲜肉类 · 烹调方式可咨询</div><div class="product-bottom"><span class="price">S$12.80 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入冷冻三文鱼切片">＋</button></div></div></article>
+<article class="product" data-category="veggie" data-price="4.8" data-name="青豆毛豆小食"><div class="product-art"><span class="product-badge">PLANT-BASED</span><button class="favorite" aria-label="收藏青豆毛豆小食">♡</button><div class="pack"><span class="food-icon">🫛</span><span class="pack-name">EDAMAME BITES</span></div></div><div class="product-info"><h3>青豆毛豆小食</h3><div class="product-meta">蔬菜素食 · 快速小食灵感</div><div class="product-bottom"><span class="price">S$4.80 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入青豆毛豆小食">＋</button></div></div></article>
+<article class="product" data-category="meal" data-price="6.5" data-name="印度飞饼家庭装"><div class="product-art purple"><span class="product-badge">FAMILY PACK</span><button class="favorite" aria-label="收藏印度飞饼家庭装">♡</button><div class="pack"><span class="food-icon">🫓</span><span class="pack-name">ROTI PARATHA</span></div></div><div class="product-info"><h3>印度飞饼家庭装</h3><div class="product-meta">主食料理 · 早餐加餐灵感</div><div class="product-bottom"><span class="price">S$6.50 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入印度飞饼家庭装">＋</button></div></div></article>
+<article class="product" data-category="snack" data-price="5.8" data-name="迷你鱼丸拼盘"><div class="product-art orange"><span class="product-badge">QUICK BITE</span><button class="favorite" aria-label="收藏迷你鱼丸拼盘">♡</button><div class="pack"><span class="food-icon">🍡</span><span class="pack-name">FISH BALL MIX</span></div></div><div class="product-info"><h3>迷你鱼丸拼盘</h3><div class="product-meta">点心小食 · 汤品火锅灵感</div><div class="product-bottom"><span class="price">S$5.80 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入迷你鱼丸拼盘">＋</button></div></div></article>
+<article class="product" data-category="seafood" data-price="9.5" data-name="香酥鸡块"><div class="product-art blue"><span class="product-badge">AIR-FRYER</span><button class="favorite" aria-label="收藏香酥鸡块">♡</button><div class="pack"><span class="food-icon">🍗</span><span class="pack-name">CRISPY BITES</span></div></div><div class="product-info"><h3>香酥鸡块</h3><div class="product-meta">海鲜肉类 · 加热方式请看包装</div><div class="product-bottom"><span class="price">S$9.50 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入香酥鸡块">＋</button></div></div></article>
+<article class="product" data-category="veggie" data-price="7.9" data-name="蔬菜春卷"><div class="product-art purple"><span class="product-badge">VEGGIE</span><button class="favorite" aria-label="收藏蔬菜春卷">♡</button><div class="pack"><span class="food-icon">🥬</span><span class="pack-name">VEGGIE ROLLS</span></div></div><div class="product-info"><h3>蔬菜春卷</h3><div class="product-meta">蔬菜素食 · 分享小食灵感</div><div class="product-bottom"><span class="price">S$7.90 <span class="unit">/ 示范价格</span></span><button class="add-cart" aria-label="加入蔬菜春卷">＋</button></div></div></article>
+</div><p id="noResults" style="display:none;text-align:center;padding:24px;color:var(--muted);font-size:10px">没找到商品，换个分类或关键词试试。</p></section>
+<section class="wrap section" id="meal"><div class="meal-finder"><div><div class="eyebrow">YOUR QUICK MEAL MATCH</div><h2>今晚吃什么？<br>帮你配个简单菜单。</h2><p>选一个用餐场景，我们会从示范商品里挑出灵感。所有商品和价格都可在代码中换成你的实际资料。</p></div><div><div style="font-size:9px;margin-bottom:7px">你现在想准备：</div><div class="meal-options" id="mealOptions"><button class="meal-option" data-match="meal">快速正餐</button><button class="meal-option" data-match="snack">下午小食</button><button class="meal-option" data-match="seafood">海鲜料理</button><button class="meal-option" data-match="veggie">蔬菜选择</button></div><div class="meal-actions"><span id="mealStatus" style="font-size:8px;color:#d5e4df">选一个场景看看推荐</span><button class="button" id="getMeal" style="background:var(--lime);color:var(--navy)">给我灵感 ✦</button></div><div class="meal-result" id="mealResult"></div></div></div></section>
+<section class="wrap section" id="delivery"><div class="head"><div><div class="eyebrow">ORDER WITH CLARITY</div><h2>从选购到询问，清楚简单</h2></div><p>页面不处理付款或配送承诺；先把订单意向发给门店，再由门店确认实际资料。</p></div><div class="delivery-note"><div class="delivery-card"><div class="eyebrow">01 · 选择</div><b>挑选商品与数量</b><p>搜索、分类、收藏，加入购物车看看大概金额。</p></div><div class="delivery-card"><div class="eyebrow">02 · 确认</div><b>询问库存与配送</b><p>通过 WhatsApp 确认商品、配送区域、时间和费用。</p></div><div class="delivery-card"><div class="eyebrow">03 · 安心下单</div><b>按门店回复完成订单</b><p>付款方式、配送与冷链安排以商家实际回复为准。</p></div></div></section></main>
+<footer class="footer"><div class="wrap"><div class="foot"><div><a class="brand" href="#home" style="color:white">FROST<span style="color:var(--lime)">&</span>FRESH<small style="color:#c0d0cd">FROZEN GOODNESS, MADE SIMPLE</small></a><p>新加坡冷冻食品店网页示范。品牌、商品与运营信息请替换成真实内容。</p></div><div class="footlinks"><a href="#shop">商品目录</a><a href="#meal">配餐灵感</a><a href="#delivery">订购说明</a></div></div><div class="copy">© <span id="year"></span> FROST & FRESH · 商品名称、价格、成分和配送资料需经商家确认。</div></div></footer>
+<button class="floating" id="quickWhatsApp">WhatsApp 询问 ↗</button><div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="cart-panel"><div class="cart-head"><h2 id="cartTitle">你的购物篮</h2><button class="close" id="closeCart" aria-label="关闭购物篮">×</button></div><div class="cart-list" id="cartList"></div><div class="cart-summary"><div class="total"><span>示范商品小计</span><span id="cartTotal">S$0.00</span></div><p class="disclaimer">示范价格仅供版面演示；库存、配送费与最终价格请以商家确认结果为准。</p><form class="checkout" id="checkoutForm"><input id="customerName" placeholder="你的称呼（选填）"><input id="postalCode" inputmode="numeric" placeholder="新加坡邮编（选填）"><select id="deliveryPreference"><option>配送方式请门店确认</option><option>希望送货上门</option><option>希望自取（如有）</option><option>想先咨询</option></select><button class="button solid" type="submit">通过 WhatsApp 询问订单 ↗</button></form></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// 发布前把占位号码换成你的新加坡 WhatsApp 号码：国家代码+号码，只留数字，例如 6591234567。
+const WHATSAPP_NUMBER = "65XXXXXXXX";
+const productCards = [...document.querySelectorAll(".product")];
+const cart = new Map();
+const favorites = new Set();
+let activeCategory = "all", searchText = "", mealCategory = "";
+const toast = document.getElementById("toast");
+let toastTimer;
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+}
+function openWhatsApp(message) {
+  if (WHATSAPP_NUMBER.includes("X")) { showToast("请先把 WhatsApp 占位号码换成真实号码"); return; }
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+}
+// 商品筛选：分类按钮与搜索框会共同生效。
+function updateProducts() {
+  let visibleCount = 0;
+  productCards.forEach(card => {
+    const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+    const matchesSearch = card.dataset.name.toLowerCase().includes(searchText.toLowerCase());
+    const visible = matchesCategory && matchesSearch;
+    card.hidden = !visible;
+    if (visible) visibleCount++;
+  });
+  document.getElementById("noResults").style.display = visibleCount ? "none" : "block";
+}
+document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+  button.classList.add("active");
+  activeCategory = button.dataset.category;
+  updateProducts();
+}));
+document.getElementById("search").addEventListener("input", event => {
+  searchText = event.target.value.trim();
+  updateProducts();
+});
+// 价格排序按示范价格计算；上线时请替换真实价格。
+document.getElementById("sort").addEventListener("change", event => {
+  const mode = event.target.value;
+  const sorted = [...productCards].sort((a, b) => mode === "low" ? Number(a.dataset.price) - Number(b.dataset.price) : mode === "high" ? Number(b.dataset.price) - Number(a.dataset.price) : productCards.indexOf(a) - productCards.indexOf(b));
+  sorted.forEach(card => document.getElementById("productGrid").appendChild(card));
+});
+// 商品收藏。
+document.querySelectorAll(".favorite").forEach(button => button.addEventListener("click", () => {
+  const name = button.closest(".product").dataset.name;
+  if (favorites.has(name)) { favorites.delete(name); button.classList.remove("saved"); button.textContent = "♡"; }
+  else { favorites.add(name); button.classList.add("saved"); button.textContent = "♥"; }
+  document.getElementById("favoriteCount").textContent = favorites.size;
+  showToast(favorites.has(name) ? "已收藏这个商品" : "已取消收藏");
+}));
+document.getElementById("showFavorites").addEventListener("click", () => {
+  if (!favorites.size) { showToast("点商品卡片的爱心，可以收藏喜欢的食品"); return; }
+  activeCategory = "all"; searchText = ""; document.getElementById("search").value = "";
+  document.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item.dataset.category === "all"));
+  productCards.forEach(card => card.hidden = !favorites.has(card.dataset.name));
+  document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+  showToast("正在显示收藏商品");
+});
+// 购物车数据和数量更新。
+function renderCart() {
+  const list = document.getElementById("cartList");
+  list.innerHTML = "";
+  let itemCount = 0, total = 0;
+  cart.forEach((item, name) => {
+    itemCount += item.quantity;
+    total += item.price * item.quantity;
+    const row = document.createElement("div");
+    row.className = "cart-row";
+    const info = document.createElement("div");
+    info.textContent = name + " · S$" + item.price.toFixed(2);
+    const controls = document.createElement("div");
+    controls.className = "qty";
+    const minus = document.createElement("button"); minus.type = "button"; minus.textContent = "−"; minus.setAttribute("aria-label", "减少数量");
+    const number = document.createElement("span"); number.textContent = item.quantity;
+    const plus = document.createElement("button"); plus.type = "button"; plus.textContent = "+"; plus.setAttribute("aria-label", "增加数量");
+    const remove = document.createElement("button"); remove.type = "button"; remove.className = "remove"; remove.textContent = "移除";
+    minus.addEventListener("click", () => changeQuantity(name, -1));
+    plus.addEventListener("click", () => changeQuantity(name, 1));
+    remove.addEventListener("click", () => { cart.delete(name); renderCart(); });
+    controls.append(minus, number, plus, remove);
+    row.append(info, controls); list.appendChild(row);
+  });
+  if (!cart.size) { list.innerHTML = '<div class="cart-empty">购物篮还空着，去挑几样喜欢的商品吧。</div>'; }
+  document.getElementById("cartCount").textContent = itemCount;
+  document.getElementById("cartTotal").textContent = "S$" + total.toFixed(2);
+}
+function changeQuantity(name, amount) {
+  const item = cart.get(name);
+  if (!item) return;
+  item.quantity += amount;
+  if (item.quantity <= 0) cart.delete(name);
+  renderCart();
+}
+document.querySelectorAll(".add-cart").forEach(button => button.addEventListener("click", () => {
+  const card = button.closest(".product"), name = card.dataset.name, price = Number(card.dataset.price);
+  const item = cart.get(name) || { price, quantity: 0 };
+  item.quantity++;
+  cart.set(name, item);
+  renderCart();
+  button.classList.add("added");
+  showToast("已加入购物篮：" + name);
+}));
+const drawer = document.getElementById("cartDrawer");
+document.getElementById("openCart").addEventListener("click", () => { renderCart(); drawer.classList.add("open"); });
+document.getElementById("closeCart").addEventListener("click", () => drawer.classList.remove("open"));
+drawer.addEventListener("click", event => { if (event.target === drawer) drawer.classList.remove("open"); });
+document.addEventListener("keydown", event => { if (event.key === "Escape") drawer.classList.remove("open"); });
+// 提交询价：把购物篮内容与顾客填写的信息放进 WhatsApp 草稿。
+document.getElementById("checkoutForm").addEventListener("submit", event => {
+  event.preventDefault();
+  if (!cart.size) { showToast("先加一些商品到购物篮，再询问订单哦"); return; }
+  const lines = [...cart].map(([name, item]) => "• " + name + " × " + item.quantity + " — S$" + (item.price * item.quantity).toFixed(2));
+  const message = [
+    "你好，我想询问这份冷冻食品订单：",
+    ...lines,
+    "示范小计：S$" + [...cart.values()].reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2),
+    "称呼：" + (document.getElementById("customerName").value || "（未填写）"),
+    "新加坡邮编：" + (document.getElementById("postalCode").value || "（之后提供）"),
+    "配送偏好：" + document.getElementById("deliveryPreference").value,
+    "请帮我确认实际价格、库存、配送区域和时间。"
+  ].join("\n");
+  openWhatsApp(message);
+});
+// 配餐灵感：选择场景，推荐相应商品分类。
+document.querySelectorAll(".meal-option").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll(".meal-option").forEach(item => item.classList.remove("selected"));
+  button.classList.add("selected");
+  mealCategory = button.dataset.match;
+  document.getElementById("mealStatus").textContent = "已选择：" + button.textContent;
+}));
+document.getElementById("getMeal").addEventListener("click", () => {
+  if (!mealCategory) { showToast("先选一个用餐场景哦"); return; }
+  const matches = productCards.filter(card => card.dataset.category === mealCategory).slice(0, 3);
+  const result = document.getElementById("mealResult");
+  result.innerHTML = "可以先看看：<strong>" + matches.map(card => card.dataset.name).join("、") + "</strong>。实际商品与食材信息请查看包装或咨询商家。";
+  result.classList.add("show");
+  if (!document.getElementById("showMealItems")) {
+    const showButton = document.createElement("button");
+    showButton.id = "showMealItems"; showButton.className = "button outline"; showButton.type = "button"; showButton.textContent = "查看这些商品 ↓";
+    showButton.style.marginTop = "9px";
+    showButton.addEventListener("click", () => {
+      activeCategory = mealCategory;
+      document.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item.dataset.category === activeCategory));
+      document.getElementById("search").value = ""; searchText = ""; updateProducts();
+      document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+    });
+    result.appendChild(document.createElement("br")); result.appendChild(showButton);
+  }
+});
+// 快速联系按钮。
+document.getElementById("quickWhatsApp").addEventListener("click", () => openWhatsApp("你好，我想咨询新加坡冷冻食品商品与配送安排。"));
+// 滚动出现动效；访客如果启用减少动态效果，系统设置会自动降低动画。
+const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+  if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll(".head, .product, .meal-finder, .delivery-card").forEach((element, index) => {
+  element.classList.add("reveal"); element.style.transitionDelay = (index % 4) * 50 + "ms"; observer.observe(element);
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+renderCart();
+</script></body></html>
+

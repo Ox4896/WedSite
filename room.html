@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f4f1"><title>ATELIER N°8 · 家居设计展厅</title>
+<style>
+/* ===== 换品牌颜色：在这里调整高级蓝、背景白与金属色 ===== */
+:root{--blue:#203d70;--blue2:#31588e;--ink:#171b22;--muted:#747984;--bg:#f4f4f1;--white:#fff;--line:#e0e1df;--silver:#b8bbb8;--gold:#b9a27a;--serif:Georgia,"Noto Serif SC",serif;--shadow:0 20px 55px #1c2c4512}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;line-height:1.6}button,select,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1220px,calc(100% - 44px));margin:auto}.topline{height:30px;background:var(--blue);color:#e9eef6;text-align:center;padding:5px;font-size:9px;letter-spacing:.17em}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font:500 17px var(--serif);letter-spacing:.12em}.brand small{display:block;color:var(--muted);font:8px sans-serif;letter-spacing:.27em;margin-top:2px}.links{display:flex;gap:28px;color:#525a66;font-size:11px}.links a:hover{color:var(--blue)}.nav-right{display:flex;align-items:center;gap:10px}.round{width:37px;height:37px;border:1px solid #cfd2d5;border-radius:50%;background:transparent;color:var(--blue);position:relative}.count{position:absolute;right:-4px;top:-4px;min-width:16px;height:16px;border-radius:50%;background:var(--gold);color:white;font-size:9px;display:grid;place-items:center}.btn{border:0;padding:12px 17px;font-size:10px;font-weight:700;letter-spacing:.06em;transition:.2s;display:inline-flex;align-items:center;gap:8px}.primary{background:var(--blue);color:white}.primary:hover{background:#142b52;transform:translateY(-2px)}.outline{border:1px solid #9fa5ac;color:var(--ink);background:transparent}.outline:hover{background:#fff}.eyebrow{font-size:9px;letter-spacing:.2em;color:var(--blue2);font-weight:800}.hero{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:center;padding:46px 0 50px;min-height:560px}.hero h1{font:400 clamp(45px,5.5vw,74px)/1.08 var(--serif);letter-spacing:-.035em;margin:17px 0}.hero h1 span{color:var(--blue)}.hero p{font-size:12px;color:var(--muted);max-width:420px;margin:0 0 25px}.actions{display:flex;gap:9px;flex-wrap:wrap}.proof{display:flex;gap:24px;margin-top:32px;color:var(--muted);font-size:8px;letter-spacing:.07em}.proof b{display:block;color:var(--ink);font:500 18px var(--serif)}
+/* ===== 主视觉展厅：之后可替换成真实空间照片 ===== */
+.gallery{height:425px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e0e2df,#f7f7f4 45%,#c6c9c7);box-shadow:var(--shadow)}.gallery:before{content:"";position:absolute;left:9%;top:9%;height:55%;width:27%;border:9px solid #fff;background:linear-gradient(135deg,#aebccc,#e4e8e8);box-shadow:0 8px 22px #24344c20}.gallery:after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;background:#d7d4ce}.glow{position:absolute;right:13%;top:-10%;width:40%;height:75%;background:#fff9;filter:blur(28px);transform:skew(-17deg)}.gallery-sofa{position:absolute;z-index:2;left:28%;bottom:23%;width:48%;height:105px;background:#35547f;border-radius:6px 6px 2px 2px;box-shadow:0 18px 28px #1c2d4940;animation:float 5s ease-in-out infinite}.gallery-sofa:before{content:"";position:absolute;inset:13px 9px 27px;background:linear-gradient(90deg,#476792 0 32%,#526f98 33% 66%,#476792 67%);border-radius:4px}.gallery-sofa:after{content:"";position:absolute;left:-8px;right:-8px;bottom:-9px;height:35px;background:#29456c;border-radius:4px;z-index:-1}.gallery-table{position:absolute;z-index:3;right:10%;bottom:15%;width:105px;height:14px;border-radius:50%;background:#b8a27d}.gallery-table:after{content:"";position:absolute;left:48%;top:10px;width:6px;height:53px;background:#8f7955}.vase{position:absolute;z-index:4;right:18%;bottom:21%;width:21px;height:35px;border-radius:7px 7px 10px 10px;background:#d1c5ae}.vase:before{content:"";position:absolute;left:8px;top:-27px;width:14px;height:30px;border-left:2px solid #65745f;transform:rotate(-23deg)}.g-caption{position:absolute;z-index:5;left:17px;bottom:13px;color:#fff;font-size:8px;letter-spacing:.16em;text-shadow:0 1px 5px #333}.g-tag{position:absolute;z-index:5;right:16px;top:16px;padding:7px 10px;background:#fff;color:var(--blue);font-size:8px;letter-spacing:.13em}
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:11px;color:#707782;font-size:8px;letter-spacing:.18em}.track{display:flex;gap:40px;width:max-content;animation:scroll 28s linear infinite}.track span:after{content:"✦";color:var(--gold);margin-left:40px}.section{padding:68px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:22px}.head h2{font:400 33px var(--serif);margin:8px 0 0}.head p{max-width:410px;color:var(--muted);font-size:10px;margin:0}.filters{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid #d3d6d8;background:transparent;color:#59616b;padding:8px 13px;font-size:9px;transition:.2s}.filter:hover,.filter.active{background:var(--blue);border-color:var(--blue);color:white}.filterbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.swatches{display:flex;align-items:center;gap:8px}.swatches small{font-size:8px;color:var(--muted);letter-spacing:.12em}.swatch{width:17px;height:17px;border-radius:50%;border:1px solid #ffffff;box-shadow:0 0 0 1px #c8cace;cursor:pointer}.swatch.active{box-shadow:0 0 0 2px var(--blue)}select{border:1px solid #d3d6d8;background:#fff;color:#56606b;padding:8px;font-size:9px}.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product{background:white;border:1px solid #e3e4e2;transition:.25s;position:relative}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product[hidden]{display:none}.art{height:230px;position:relative;overflow:hidden;background:linear-gradient(140deg,#e1e4e5,#c8ced2)}.art:before{content:"";position:absolute;inset:9%;border:1px solid #fff9;background:radial-gradient(ellipse at 50% 86%,#31496c20,transparent 55%)}.art.blue{background:linear-gradient(140deg,#cbd5e1,#e8ebeb)}.art.sand{background:linear-gradient(140deg,#ded7cb,#f0eee8)}.art.sage{background:linear-gradient(140deg,#cbd4ce,#e6eae5)}.art.dark{background:linear-gradient(140deg,#aeb4bb,#dfe2e4)}.object{position:absolute;z-index:2}.sofa-art .object{left:20%;bottom:25%;width:60%;height:31%;background:#405d86;border-radius:12px 12px 4px 4px;box-shadow:0 14px 20px #27395130}.sofa-art .object:before{content:"";position:absolute;inset:13% 6% 28%;background:linear-gradient(90deg,#526e96 0 32%,#617ca0 33% 66%,#526e96 67%);border-radius:5px}.sofa-art .object:after{content:"";position:absolute;left:-4%;right:-4%;bottom:-12%;height:30%;background:#2b466d;z-index:-1}.bed-art .object{left:17%;bottom:22%;width:66%;height:28%;background:#b7a78e;border-radius:4px;box-shadow:0 13px 18px #27395128}.bed-art .object:before{content:"";position:absolute;left:-3%;right:-3%;top:-52%;height:58%;background:#ece9e2}.bed-art .object:after{content:"";position:absolute;left:10%;top:-42%;width:25%;height:31%;background:#fff;border-radius:3px}.table-art .object{left:16%;bottom:40%;width:68%;height:8%;background:#b59a72;border-radius:50%}.table-art .object:before{content:"";position:absolute;left:49%;top:4px;width:6px;height:70px;background:#89734f}.chair-art .object{left:32%;bottom:23%;width:36%;height:42%;border:11px solid #667c98;border-bottom:0;border-radius:16px 16px 0 0}.chair-art .object:before{content:"";position:absolute;left:-7px;right:-7px;bottom:-13px;height:14px;background:#889bb0}.cabinet-art .object{left:32%;bottom:18%;width:37%;height:55%;background:#a9977c;border:1px solid #e7dfd0}.cabinet-art .object:before{content:"";position:absolute;inset:4% 50%;border-left:1px solid #75634c}.lamp-art .object{left:50%;bottom:14%;width:4px;height:66%;background:#8b806e}.lamp-art .object:before{content:"";position:absolute;left:-27px;top:-4px;width:58px;height:39px;background:#ece3d2;border-radius:50% 50% 20% 20%}.label{position:absolute;z-index:4;left:12px;top:12px;background:#ffffffdc;color:var(--blue);padding:5px 8px;font-size:8px;letter-spacing:.12em}.favorite{position:absolute;z-index:4;right:11px;top:11px;width:31px;height:31px;border:0;border-radius:50%;background:#ffffffdf;color:var(--blue);font-size:16px}.favorite.saved{color:#b96352}.product-info{padding:13px 14px}.product-info h3{font:400 16px var(--serif);margin:0}.product-meta{font-size:9px;color:var(--muted);margin-top:3px}.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:12px}.ask-price{color:var(--blue);font-size:9px;font-weight:700}.detail{border:0;border-bottom:1px solid #b4b8bc;background:none;color:#69717a;font-size:9px;padding:4px 0}.compare-check{font-size:8px;color:#747984;display:flex;gap:5px;align-items:center}.compare-check input{accent-color:var(--blue)}
+/* ===== 互动空间顾问、比较栏、产品弹窗 ===== */
+.wizard{background:var(--blue);color:white;padding:38px;display:grid;grid-template-columns:.75fr 1.25fr;gap:32px;position:relative;overflow:hidden}.wizard:after{content:"08";position:absolute;right:18px;top:-45px;font:200px var(--serif);color:#ffffff0d}.wizard h2{font:400 31px var(--serif);line-height:1.3;margin:9px 0}.wizard p{font-size:10px;color:#d5ddeb;max-width:310px}.wizard .eyebrow{color:#d2c29b}.wizard-body{position:relative;z-index:1}.progress{height:3px;background:#ffffff33;margin-bottom:20px}.progress span{display:block;height:100%;width:33%;background:#d1bd8d;transition:width .3s}.question{font-size:11px;font-weight:700;margin:14px 0 9px}.options{display:flex;gap:7px;flex-wrap:wrap}.option{border:1px solid #ffffff66;background:transparent;color:white;padding:8px 11px;font-size:9px;transition:.2s}.option:hover,.option.selected{background:#fff;color:var(--blue)}.wizard-actions{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:10px}.wizard-status{font-size:9px;color:#d4deeb}.result{display:none;margin-top:12px;background:#fff;color:var(--ink);padding:12px;font-size:10px}.result.show{display:block;animation:fade .25s}.comparebar{position:fixed;z-index:12;left:50%;bottom:17px;transform:translateX(-50%);background:#202b3c;color:#fff;display:none;align-items:center;gap:15px;padding:10px 14px;box-shadow:0 12px 35px #141e2c55}.comparebar.show{display:flex}.comparebar span{font-size:9px}.comparebar button{border:0;background:#fff;color:var(--blue);padding:8px 11px;font-size:9px}.comparebar .clear{background:transparent;color:#fff;border:1px solid #ffffff55}.compare-panel{display:none;position:fixed;z-index:13;inset:0;background:#111827aa;place-items:center;padding:18px}.compare-panel.open{display:grid}.compare-box{background:white;color:var(--ink);width:min(620px,100%);padding:23px;box-shadow:var(--shadow)}.compare-box h3{font:400 23px var(--serif);margin:0 0 13px}.compare-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.compare-item{border:1px solid var(--line);padding:13px;font-size:10px}.compare-item strong{display:block;font:16px var(--serif);margin-bottom:6px}.compare-close{margin-top:15px;border:0;background:var(--blue);color:white;padding:9px 14px;font-size:9px}.modal-bg{display:none;position:fixed;inset:0;z-index:30;background:#10203aaa;backdrop-filter:blur(6px);place-items:center;padding:18px}.modal-bg.open{display:grid;animation:fade .2s}.modal{position:relative;width:min(510px,100%);background:#fff;padding:24px;box-shadow:0 25px 80px #0b183944;animation:rise .3s}.close{position:absolute;right:12px;top:12px;border:1px solid #d7dade;background:white;width:30px;height:30px}.modal h3{font:400 25px var(--serif);margin:7px 0}.modal p{font-size:10px;color:var(--muted)}.modal-label{font-size:9px;font-weight:700;margin:16px 0 7px}.fabric-list{display:flex;gap:7px;flex-wrap:wrap}.fabric{border:1px solid #d8dade;background:white;color:#525c68;padding:7px 10px;font-size:9px}.fabric.active{border-color:var(--blue);color:var(--blue);background:#f1f4f8}.modal-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:21px}.modal-footer small{font-size:9px;color:var(--muted)}.toast{position:fixed;z-index:40;left:50%;bottom:24px;transform:translate(-50%,12px);opacity:0;pointer-events:none;background:#202b3c;color:white;padding:10px 15px;font-size:9px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.floating-contact{position:fixed;right:16px;bottom:16px;z-index:9;border:0;background:var(--blue);color:white;padding:12px 15px;font-size:9px;box-shadow:0 8px 20px #192b4655}.reveal{opacity:0;transform:translateY(15px);transition:.6s}.reveal.visible{opacity:1;transform:none}@keyframes float{50%{transform:translateY(-6px)}}@keyframes scroll{to{transform:translateX(-50%)}}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:900px){.hero{gap:22px}.gallery{height:340px}.catalog{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.wrap{width:calc(100% - 28px)}.nav{height:64px}.links{display:none}.hero{grid-template-columns:1fr;padding:34px 0;gap:22px}.hero h1{font-size:48px}.gallery{height:270px}.section{padding:52px 0}.head{display:block}.head p{margin-top:10px}.head h2{font-size:28px}.filterbar{align-items:flex-start;flex-direction:column;gap:12px}.catalog{gap:9px}.art{height:155px}.product-info{padding:10px}.product-info h3{font-size:14px}.product-bottom{align-items:flex-start;flex-direction:column;gap:6px}.wizard{grid-template-columns:1fr;padding:22px;gap:12px}.wizard h2{font-size:27px}.wizard:after{font-size:120px;top:-20px}.review-grid,.steps{grid-template-columns:1fr}.comparebar{width:calc(100% - 24px);justify-content:space-between;gap:6px}.comparebar span{font-size:8px}.comparebar button{padding:7px;font-size:8px}.compare-list{grid-template-columns:1fr}.modal-footer{align-items:flex-start;flex-direction:column}.floating-contact{right:9px;bottom:9px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head><body>
+<div class="topline">MADE FOR LIVING WELL　 ·　ATELIER N°8 HOME COLLECTION</div><header class="wrap nav"><a href="#home" class="brand">ATELIER N°8<small>FURNITURE & OBJECTS</small></a><nav class="links"><a href="#collection">家具系列</a><a href="#advisor">空间顾问</a><a href="#service">服务体验</a></nav><div class="nav-right"><button class="round" id="favoriteView" aria-label="查看收藏">♡<span class="count" id="favoriteCount">0</span></button><a class="btn primary" href="#collection">进入展厅 ↗</a></div></header>
+<main id="home"><section class="wrap hero"><div><div class="eyebrow">A MORE PERSONAL WAY TO FURNISH</div><h1>为日常，<br><span>挑选值得的设计。</span></h1><p>从一件家具开始，让材质、比例与光线找到恰好的平衡。浏览系列、收藏灵感，或让空间顾问根据你的生活方式给出搭配方向。</p><div class="actions"><a class="btn primary" href="#collection">探索家具系列 ↓</a><a class="btn outline" href="#advisor">开始空间搭配 ✦</a></div><div class="proof"><div><b>01:1</b>一对一空间交流</div><div><b>∞</b>材质与色调灵感</div><div><b>08</b>精选系列示意</div></div></div><div class="gallery"><div class="glow"></div><div class="gallery-sofa"></div><div class="gallery-table"></div><div class="gallery-book"></div><div class="vase"></div><span class="g-tag">SHOWROOM / STUDY 01</span><span class="g-caption">A COMPOSED HOME, MADE PERSONAL</span></div></section>
+<div class="marquee"><div class="track"><span>精选材质</span><span>设计比例</span><span>空间提案</span><span>专属搭配</span><span>家具灵感</span><span>精选材质</span><span>设计比例</span><span>空间提案</span><span>专属搭配</span><span>家具灵感</span></div></div>
+<section class="wrap section" id="collection"><div class="head"><div><div class="eyebrow">THE COLLECTION</div><h2>为你的空间挑一件</h2></div><p>选择家具类型与偏好色调；可收藏、比较，再点开单品调整材质和风格。当前商品为示例，请换成真实产品资料。</p></div><div class="filters"><button class="filter active" data-category="all">全部作品</button><button class="filter" data-category="living">客厅</button><button class="filter" data-category="bedroom">卧室</button><button class="filter" data-category="dining">餐厅</button><button class="filter" data-category="storage">收纳</button><button class="filter" data-category="decor">灯饰</button></div><div class="filterbar"><div class="swatches"><small>色调</small><button class="swatch active" data-tone="all" style="background:#c8c4b9" aria-label="全部色调"></button><button class="swatch" data-tone="blue" style="background:#47638a" aria-label="午夜蓝"></button><button class="swatch" data-tone="sand" style="background:#b7a58a" aria-label="沙色"></button><button class="swatch" data-tone="sage" style="background:#78806e" aria-label="鼠尾草绿"></button></div><label><small>排序　</small><select id="sort"><option value="featured">精选顺序</option><option value="az">名称 A–Z</option><option value="za">名称 Z–A</option></select></label></div><div class="catalog" id="catalog">
+<!-- 商品卡片：复制整张 article 并修改 data-category、data-tone、名称、标签和说明来新增商品。 -->
+<article class="product" data-category="living" data-name="云感组合沙发" data-tone="blue"><div class="art blue sofa-art"><span class="label">LIVING · 01</span><button class="favorite" aria-label="收藏云感组合沙发">♡</button><i class="object"></i></div><div class="product-info"><h3>云感组合沙发</h3><div class="product-meta">模块组合 · 细腻织物 · 客厅系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+<article class="product" data-category="bedroom" data-name="悬浮低床架" data-tone="sand"><div class="art sand bed-art"><span class="label">BEDROOM · 02</span><button class="favorite" aria-label="收藏悬浮低床架">♡</button><i class="object"></i></div><div class="product-info"><h3>悬浮低床架</h3><div class="product-meta">简洁床头 · 柔和木色 · 卧室系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+<article class="product" data-category="dining" data-name="弧面餐桌" data-tone="sand"><div class="art sand table-art"><span class="label">DINING · 03</span><button class="favorite" aria-label="收藏弧面餐桌">♡</button><i class="object"></i></div><div class="product-info"><h3>弧面餐桌</h3><div class="product-meta">温润桌面 · 圆润边角 · 餐厅系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+<article class="product" data-category="dining" data-name="雕塑弧背椅" data-tone="blue"><div class="art blue chair-art"><span class="label">DINING · 04</span><button class="favorite" aria-label="收藏雕塑弧背椅">♡</button><i class="object"></i></div><div class="product-info"><h3>雕塑弧背椅</h3><div class="product-meta">流畅靠背 · 轻盈结构 · 餐厅系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+<article class="product" data-category="storage" data-name="细节边柜" data-tone="sage"><div class="art sage cabinet-art"><span class="label">STORAGE · 05</span><button class="favorite" aria-label="收藏细节边柜">♡</button><i class="object"></i></div><div class="product-info"><h3>细节边柜</h3><div class="product-meta">开放与隐藏收纳 · 低饱和绿 · 收纳系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+<article class="product" data-category="decor" data-name="拱光落地灯" data-tone="sand"><div class="art sand lamp-art"><span class="label">LIGHTING · 06</span><button class="favorite" aria-label="收藏拱光落地灯">♡</button><i class="object"></i></div><div class="product-info"><h3>拱光落地灯</h3><div class="product-meta">柔和灯罩 · 安静光线 · 灯饰系列</div><div class="product-bottom"><span class="ask-price">欢迎询价</span><label class="compare-check"><input type="checkbox" class="compare">加入比较</label><button class="detail">选择材质 ↗</button></div></div></article>
+</div><p id="empty" style="display:none;text-align:center;color:var(--muted);padding:25px;font-size:10px">暂时没有符合的家具，换个筛选条件试试。</p></section>
+<section class="wrap section" id="advisor"><div class="wizard"><div><div class="eyebrow">YOUR SPACE, CONSIDERED</div><h2>让空间顾问<br>帮你找到方向。</h2><p>回答几个小问题，我们会整理一份风格建议，并帮你把需求写进 WhatsApp 询价。</p><small style="font-size:8px;color:#d8dfeb">无需注册 · 可随时修改 · 不会自动下单</small></div><div class="wizard-body"><div class="progress"><span id="progress"></span></div><div class="question" id="question">1 / 3　你想布置哪个空间？</div><div class="options" id="options"><button class="option" data-value="客厅">客厅</button><button class="option" data-value="卧室">卧室</button><button class="option" data-value="餐厅">餐厅</button><button class="option" data-value="整套空间">整套空间</button></div><div class="wizard-status" id="wizardStatus" style="margin-top:10px">点选一个答案继续</div><div class="wizard-actions"><button class="btn btn-line" id="backStep" style="visibility:hidden">← 返回</button><button class="btn btn-light" id="nextStep">继续 →</button></div><div class="result" id="result"></div></div></div></section>
+<section class="wrap section" id="service"><div class="head"><div><div class="eyebrow">THE EXPERIENCE</div><h2>让选购更贴近你的生活</h2></div><p>从空间需求和生活习惯出发，再一起确认材质、尺寸、价格和实际门店安排。</p></div><div class="steps"><div class="step"><b>01</b><h3>挑选与收藏</h3><p>从家具系列开始，收藏喜欢的设计，也可以比较两件单品。</p></div><div class="step"><b>02</b><h3>描述你的空间</h3><p>空间顾问帮你整理房间用途、色调和生活需求。</p></div><div class="step"><b>03</b><h3>一对一继续咨询</h3><p>WhatsApp 会带上你的选择，方便顾问接着了解。</p></div></div></section>
+<section class="wrap section" style="padding-top:0"><div class="head"><div><div class="eyebrow">NOTES FROM CLIENTS</div><h2>灵感从真实生活开始</h2></div><p>以下是示范文案；上线前请替换成真实并获授权的顾客评价。</p></div><div class="review-grid"><div class="review"><div class="stars">★★★★★</div><p>“先有方向再挑款式，跟家里尺寸和颜色更容易配起来。”</p><small>示范评价 · 空间搭配</small></div><div class="review"><div class="stars">★★★★★</div><p>“收藏和比较很方便，问价时也不怕忘记自己看过哪一款。”</p><small>示范评价 · 家具选购</small></div><div class="review"><div class="stars">★★★★★</div><p>“可以慢慢聊材质和规格，整个选购过程更有把握。”</p><small>示范评价 · 一对一咨询</small></div></div></section></main>
+<footer class="footer"><div class="wrap"><div class="foot"><div><a class="brand" href="#home">ATELIER N°8<small>FURNITURE & OBJECTS</small></a><p>家具设计展厅示范页。上线前请替换品牌、商品、资料、顾客评价与联系方式。</p></div><div class="footlinks"><a href="#collection">家具系列</a><a href="#advisor">空间顾问</a><a href="#service">服务体验</a></div></div><div class="copy">© <span id="year"></span> ATELIER N°8 · 商品图片、价格和门店服务以实际资料为准。</div></div></footer>
+<button class="floating-contact" id="quickContact">联系空间顾问 ↗</button><div class="comparebar" id="compareBar"><span id="compareText">已选 0 件</span><button id="compareNow">并排比较</button><button class="clear" id="clearCompare">清除</button></div><div class="compare-panel" id="comparePanel"><div class="compare-box"><h3>家具对比</h3><div class="compare-list" id="compareList"></div><button class="compare-close" id="closeCompare">完成</button></div></div>
+<div class="modal-bg" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="close" id="closeModal" aria-label="关闭">×</button><div class="eyebrow">PERSONALISE YOUR PIECE</div><h3 id="modalTitle">家具名称</h3><p id="modalDescription">选择喜欢的材质和空间感觉，再向门店咨询实际规格。</p><div class="modal-label">布料 / 材质方向</div><div class="fabric-list" id="fabricList"><button class="fabric active" data-fabric="细腻织物">细腻织物</button><button class="fabric" data-fabric="天然木纹">天然木纹</button><button class="fabric" data-fabric="哑光金属">哑光金属</button><button class="fabric" data-fabric="想听建议">想听建议</button></div><div class="modal-label">颜色偏好</div><div class="fabric-list" id="colorList"><button class="fabric active" data-color="午夜蓝">午夜蓝</button><button class="fabric" data-color="沙色">沙色</button><button class="fabric" data-color="鼠尾草绿">鼠尾草绿</button><button class="fabric" data-color="请推荐">请推荐</button></div><div class="modal-footer"><small>实际材质、颜色与规格请向门店确认。</small><button class="btn primary" id="askAboutProduct">WhatsApp 询问 ↗</button></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// ===== 联系设置：换成自己的国家代码和号码，只填数字，例如 60123456789 =====
+const WHATSAPP_NUMBER = "601XXXXXXXX";
+const products = [...document.querySelectorAll(".product")];
+let category = "all", tone = "all", currentProduct = "", currentFabric = "细腻织物", currentColor = "午夜蓝";
+const toast = document.getElementById("toast");
+let toastTimer;
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+}
+function sendWhatsApp(message) {
+  if (WHATSAPP_NUMBER.includes("X")) { showToast("请先把代码里的 WhatsApp 占位号码换成你的号码"); return; }
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+}
+function updateCatalog() {
+  let visible = 0;
+  products.forEach(card => {
+    const matchesCategory = category === "all" || card.dataset.category === category;
+    const matchesTone = tone === "all" || card.dataset.tone === tone;
+    card.hidden = !(matchesCategory && matchesTone);
+    if (!card.hidden) visible++;
+  });
+  document.getElementById("empty").style.display = visible ? "none" : "block";
+}
+// 分类和色调筛选。
+document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+  button.classList.add("active"); category = button.dataset.category; updateCatalog();
+}));
+document.querySelectorAll(".swatch").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll(".swatch").forEach(item => item.classList.remove("active"));
+  button.classList.add("active"); tone = button.dataset.tone; updateCatalog();
+}));
+// 商品名称排序。
+document.getElementById("sort").addEventListener("change", event => {
+  const sorted = [...products].sort((a, b) => event.target.value === "az" ? a.dataset.name.localeCompare(b.dataset.name, "zh") : event.target.value === "za" ? b.dataset.name.localeCompare(a.dataset.name, "zh") : products.indexOf(a) - products.indexOf(b));
+  sorted.forEach(card => document.getElementById("catalog").appendChild(card));
+});
+// 收藏夹：收藏后右上角会显示数量，点爱心查看清单。
+const favorites = new Set();
+document.querySelectorAll(".favorite").forEach(button => button.addEventListener("click", () => {
+  const card = button.closest(".product"), name = card.dataset.name;
+  if (favorites.has(name)) { favorites.delete(name); button.classList.remove("saved"); button.textContent = "♡"; }
+  else { favorites.add(name); button.classList.add("saved"); button.textContent = "♥"; }
+  document.getElementById("favoriteCount").textContent = favorites.size;
+  showToast(favorites.has(name) ? "已加入收藏" : "已从收藏移除");
+}));
+document.getElementById("favoriteView").addEventListener("click", () => {
+  if (!favorites.size) { showToast("点商品卡片的爱心，先收藏喜欢的家具"); return; }
+  category = "all"; tone = "all";
+  document.querySelector('[data-category="all"]').click();
+  products.forEach(card => card.hidden = !favorites.has(card.dataset.name));
+  document.getElementById("collection").scrollIntoView({ behavior: "smooth" });
+  showToast("正在显示你的收藏");
+});
+// 比较栏：最多选择两件家具并排看。
+const compareSet = new Set();
+function refreshCompare() {
+  document.getElementById("compareText").textContent = "已选 " + compareSet.size + " 件家具";
+  document.getElementById("compareBar").classList.toggle("show", compareSet.size > 0);
+}
+document.querySelectorAll(".compare").forEach(input => input.addEventListener("change", () => {
+  const card = input.closest(".product"), name = card.dataset.name;
+  if (input.checked && compareSet.size >= 2) { input.checked = false; showToast("一次最多比较两件家具"); return; }
+  if (input.checked) compareSet.add(name); else compareSet.delete(name);
+  refreshCompare();
+}));
+document.getElementById("clearCompare").addEventListener("click", () => {
+  compareSet.clear(); document.querySelectorAll(".compare").forEach(input => input.checked = false); refreshCompare();
+});
+document.getElementById("compareNow").addEventListener("click", () => {
+  const list = document.getElementById("compareList"); list.innerHTML = "";
+  [...compareSet].forEach(name => {
+    const card = products.find(item => item.dataset.name === name);
+    const block = document.createElement("div"); block.className = "compare-item";
+    block.innerHTML = "<strong>" + name + "</strong>类别：" + card.dataset.category + "<br>色调：" + card.dataset.tone + "<br>价格与规格：向门店咨询";
+    list.appendChild(block);
+  });
+  document.getElementById("comparePanel").classList.add("open");
+});
+document.getElementById("closeCompare").addEventListener("click", () => document.getElementById("comparePanel").classList.remove("open"));
+// 单品材质与颜色选择弹窗。
+const productModal = document.getElementById("productModal");
+document.querySelectorAll(".detail").forEach(button => button.addEventListener("click", () => {
+  const card = button.closest(".product");
+  currentProduct = card.dataset.name;
+  document.getElementById("modalTitle").textContent = currentProduct;
+  document.getElementById("modalDescription").textContent = card.querySelector(".product-meta").textContent + "。选择偏好的材质和颜色，再询问门店实际规格。";
+  productModal.classList.add("open");
+}));
+document.getElementById("closeModal").addEventListener("click", () => productModal.classList.remove("open"));
+productModal.addEventListener("click", event => { if (event.target === productModal) productModal.classList.remove("open"); });
+document.addEventListener("keydown", event => { if (event.key === "Escape") productModal.classList.remove("open"); });
+document.querySelectorAll("#fabricList .fabric").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll("#fabricList .fabric").forEach(item => item.classList.remove("active"));
+  button.classList.add("active"); currentFabric = button.dataset.fabric;
+}));
+document.querySelectorAll("#colorList .fabric").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll("#colorList .fabric").forEach(item => item.classList.remove("active"));
+  button.classList.add("active"); currentColor = button.dataset.color;
+}));
+document.getElementById("askAboutProduct").addEventListener("click", () => sendWhatsApp("你好，我想了解这件家具：" + currentProduct + "\n材质偏好：" + currentFabric + "\n颜色偏好：" + currentColor + "\n想询问价格、尺寸和可选规格。"));
+// 三步空间搭配顾问。修改下方问题和选项即可更新问答内容。
+const questions = [
+  { title: "1 / 3　你想布置哪个空间？", answers: ["客厅", "卧室", "餐厅", "整套空间"] },
+  { title: "2 / 3　你喜欢哪种气氛？", answers: ["安静极简", "自然温暖", "现代轻奢", "想听建议"] },
+  { title: "3 / 3　预算想先怎么安排？", answers: ["先了解报价", "RM 1,000 以下", "RM 1,000–3,000", "RM 3,000 以上"] }
+];
+let wizardStep = 0;
+const wizardAnswers = ["", "", ""];
+function drawWizard() {
+  const options = document.getElementById("options");
+  const question = document.getElementById("question");
+  document.getElementById("progress").style.width = ((wizardStep + 1) / 3 * 100) + "%";
+  question.textContent = questions[wizardStep].title;
+  options.innerHTML = "";
+  questions[wizardStep].answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.className = "option" + (wizardAnswers[wizardStep] === answer ? " selected" : "");
+    button.dataset.answer = answer; button.textContent = answer;
+    button.addEventListener("click", () => {
+      wizardAnswers[wizardStep] = answer;
+      options.querySelectorAll(".option").forEach(item => item.classList.remove("selected"));
+      button.classList.add("selected");
+      document.getElementById("wizardStatus").textContent = "已选择：" + answer;
+    });
+    options.appendChild(button);
+  });
+  document.getElementById("wizardStatus").textContent = wizardAnswers[wizardStep] ? "已选择：" + wizardAnswers[wizardStep] : "点选一个答案继续";
+  document.getElementById("backStep").style.visibility = wizardStep === 0 ? "hidden" : "visible";
+  document.getElementById("backStep").textContent = "← 返回";
+  document.getElementById("nextStep").textContent = wizardStep === 2 ? "生成搭配建议 →" : "继续 →";
+}
+function showPlan() {
+  document.querySelector(".wizard-body .question").textContent = "你的空间搭配方向已准备好";
+  document.getElementById("options").innerHTML = "";
+  document.getElementById("wizardStatus").textContent = "空间 · " + wizardAnswers[0] + "　/　风格 · " + wizardAnswers[1] + "　/　预算 · " + wizardAnswers[2];
+  document.getElementById("progress").style.width = "100%";
+  document.getElementById("nextStep").textContent = "WhatsApp 发送需求 ↗";
+  document.getElementById("backStep").textContent = "重新开始";
+  document.getElementById("backStep").style.visibility = "visible";
+  const categories = { "客厅": "living", "卧室": "bedroom", "餐厅": "dining", "整套空间": "all" };
+  const targetCategory = categories[wizardAnswers[0]] || "all";
+  const recommended = products.filter(item => targetCategory === "all" || item.dataset.category === targetCategory).slice(0, 3).map(item => item.dataset.name);
+  document.getElementById("result").innerHTML = "建议先从 <strong>" + recommended.join("、") + "</strong> 开始浏览，再按你的空间与预算调整。";
+  document.getElementById("result").classList.add("show");
+  document.getElementById("nextStep").onclick = () => sendWhatsApp("你好，我想请空间顾问帮我搭配家具。\n空间：" + wizardAnswers[0] + "\n喜欢的风格：" + wizardAnswers[1] + "\n预算方向：" + wizardAnswers[2] + "\n推荐先看：" + recommended.join("、"));
+  document.getElementById("backStep").onclick = () => {
+    wizardStep = 0; wizardAnswers.fill("");
+    document.getElementById("result").classList.remove("show");
+    document.getElementById("backStep").onclick = previousWizardStep;
+    document.getElementById("nextStep").onclick = nextWizardStep;
+    drawWizard();
+  };
+}
+function previousWizardStep() { if (wizardStep > 0) wizardStep--; drawWizard(); }
+function nextWizardStep() {
+  if (!wizardAnswers[wizardStep]) { showToast("先选一个答案，再继续哦"); return; }
+  if (wizardStep < 2) { wizardStep++; drawWizard(); }
+  else showPlan();
+}
+document.getElementById("backStep").onclick = previousWizardStep;
+document.getElementById("nextStep").onclick = nextWizardStep;
+document.getElementById("quickContact").addEventListener("click", () => sendWhatsApp("你好，我想咨询家具和空间搭配。"));
+// 页面渐入动效，并尊重访客的减少动态效果设置。
+const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+  if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll(".head, .product, .wizard, .step, .review").forEach((element, index) => {
+  element.classList.add("reveal"); element.style.transitionDelay = (index % 3) * 55 + "ms"; observer.observe(element);
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+drawWizard();
+</script></body></html>
+
